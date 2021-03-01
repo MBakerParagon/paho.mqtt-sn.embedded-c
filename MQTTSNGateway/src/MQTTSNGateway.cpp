@@ -35,6 +35,8 @@ Gateway::Gateway(void)
     theMultiTaskProcess = this;
     theProcess = this;
     _packetEventQue.setMaxSize(MAX_INFLIGHTMESSAGES * MAX_CLIENTS);
+	_brokerSendQue.setMaxSize(MAX_INFLIGHTMESSAGES);
+	_clientSendQue.setMaxSize(MAX_INFLIGHTMESSAGES);
     _clientList = new ClientList();
     _adapterManager = new AdapterManager(this);
     _topics = new Topics();
